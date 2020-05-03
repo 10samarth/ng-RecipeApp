@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
+  selectedLocation:string = 'recipes';
+
+  changeLocation(location:string){
+      this.selectedLocation = location;
+  }
 }
