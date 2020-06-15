@@ -1,15 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from './auth/auth.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
 
-  selectedLocation:string = 'recipes';
+  constructor (private authSrvice:AuthService){}
 
-  changeLocation(location:string){
-      this.selectedLocation = location;
+  ngOnInit(){
+    this.authSrvice.autoLogin()
   }
+  // selectedLocation:string = 'recipes';
+
+  // changeLocation(location:string){
+  //     this.selectedLocation = location;
+  // }
 }

@@ -9,27 +9,34 @@ export class RecipeService {
     recipeChanged = new Subject<Recipe[]>();
   
 
-    private recipes: Recipe[] = [
-        new Recipe('Pav Bhajji',
-            'Simple Pav Bhajji',
-            'https://pavbhajihut.com/wp-content/themes/twentyseventeen-child/assets/images/pwv1.png',
-            [
-                new Ingredient('Pav', 2),
-                new Ingredient('Bhaji', 1),
-                new Ingredient('Coriander', 1)
-            ]),
-        new Recipe('Cheese Pav Bhajji',
-            'Special Pav Bhajji',
-            'https://www.archanaskitchen.com/images/archanaskitchen/1-Author/nithya.anantham/Cheesy_Pav_Bhaji_Recipe.jpg',
-            [new Ingredient('Pav', 2),
-            new Ingredient('Bhaji', 1),
-            new Ingredient('Coriander', 1),
-            new Ingredient('Cheese', 1)
-            ])
-    ];
+    // private recipes: Recipe[] = [
+    //     new Recipe('Pav Bhajji',
+    //         'Simple Pav Bhajji',
+    //         'https://pavbhajihut.com/wp-content/themes/twentyseventeen-child/assets/images/pwv1.png',
+    //         [
+    //             new Ingredient('Pav', 2),
+    //             new Ingredient('Bhaji', 1),
+    //             new Ingredient('Coriander', 1)
+    //         ]),
+    //     new Recipe('Cheese Pav Bhajji',
+    //         'Special Pav Bhajji',
+    //         'https://www.archanaskitchen.com/images/archanaskitchen/1-Author/nithya.anantham/Cheesy_Pav_Bhaji_Recipe.jpg',
+    //         [new Ingredient('Pav', 2),
+    //         new Ingredient('Bhaji', 1),
+    //         new Ingredient('Coriander', 1),
+    //         new Ingredient('Cheese', 1)
+    //         ])
+    // ];
 
+    private recipes: Recipe[] = []
+    
     constructor(private slService:ShoppingService){
 
+    }
+
+    setRecipe(recipes:Recipe[]){
+        this.recipes = recipes;
+        this.recipeChanged.next(this.recipes.slice());
     }
     getRecipeList() {
         return this.recipes.slice()
