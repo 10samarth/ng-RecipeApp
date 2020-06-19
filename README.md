@@ -1,5 +1,9 @@
 # RecipeApp
 
+Created this project while completing the course on Udemy - Angular - The Complete Guide (2020 Edition)  by Maximilian Schwarzmüller </br>
+
+Link: https://www.udemy.com/course/the-complete-guide-to-angular-2/
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.3.
 
 ## Development server
